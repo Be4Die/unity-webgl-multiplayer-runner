@@ -244,11 +244,11 @@ func findServerPID() int {
 	for _, p := range processes {
 		name, _ := p.Name()
 		if runtime.GOOS == "windows" {
-			if name == "YourServer.exe" {
+			if name == "server.exe" {
 				return int(p.Pid)
 			}
 		} else {
-			if name == "yourserver" {
+			if name == "server" {
 				return int(p.Pid)
 			}
 		}
